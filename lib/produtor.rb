@@ -1,6 +1,6 @@
 module MultiThreading
 	class Produtor
-		include java.lang.Runnable
+		include Runnable
 		
 		def initialize(localizacao_compartilhada)
 			@localizacao_compartilhada = localizacao_compartilhada

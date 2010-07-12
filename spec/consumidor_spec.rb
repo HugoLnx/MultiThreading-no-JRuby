@@ -27,7 +27,7 @@ module MultiThreading
 			end
 			
 			it 'deveria ser executavel' do
-				lambda{@consumidor.run}.should_not raise_error NoMethodError
+				@consumidor.method(:run).should_not be_nil
 			end
 		end
 	end

@@ -27,7 +27,7 @@ module MultiThreading
 			end
 			
 			it 'deveria ser executavel' do
-				lambda{@produtor.run}.should_not raise_error
+				@produtor.method(:run).should_not be_nil
 			end
 		end
 	end
