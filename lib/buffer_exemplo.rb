@@ -3,7 +3,7 @@ module MultiThreading
 		include Buffer
 		
 		def initialize
-			@buffer = 0
+			@buffer = -1
 		end
 		
 		def set(valor)
@@ -12,7 +12,7 @@ module MultiThreading
 		end
 		
 		def get
-			puts "Consumidor lê: #{@buffer}"
+			puts "Consumidor le: #{@buffer}"
 			@buffer
 		end
 	end

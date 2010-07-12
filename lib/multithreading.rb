@@ -7,10 +7,12 @@ java_import java.lang.Runnable
 java_import java.lang.InterruptedException
 java_import java.util.concurrent.ExecutorService
 java_import java.util.concurrent.Executors
+JThread = java.lang.Thread # A constante Thread ja existe
 
-JThread = java.lang.Thread
-
-Dir[File.join(aqui,'**.class')].each do |class_arq|
+# Dando require de todas as classes do diretorio bin/
+classes_requiridas = Dir[File.join(aqui,'**.class')]
+classes_requiridas.delete_if{|path| path.include? 'multithreading.class'}
+classes_requiridas.each do |class_arq|
 	class_arq = class_arq.slice(/bin\/(.*)\.class$/,1)
 	require File.basename class_arq
 end

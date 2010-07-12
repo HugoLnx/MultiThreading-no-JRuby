@@ -1,11 +1,9 @@
 require 'spec_helper'
 
 module MultiThreading
-	UmBuffer = Class.new{include Buffer}
-	
 	describe 'Um Consumidor' do
 		before :all do
-			@buffer = UmBuffer.new
+			@buffer = BufferExemplo.new
 		end
 	
 		it 'deveria implementar Runnable' do
