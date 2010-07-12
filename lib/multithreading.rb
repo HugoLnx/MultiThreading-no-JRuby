@@ -5,6 +5,8 @@ require 'java'
 
 java_import java.lang.Runnable
 java_import java.lang.InterruptedException
+java_import java.util.concurrent.ExecutorService
+java_import java.util.concurrent.Executors
 
 JThread = java.lang.Thread
 
