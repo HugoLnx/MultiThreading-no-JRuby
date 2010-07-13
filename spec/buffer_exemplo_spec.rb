@@ -31,23 +31,36 @@ module MultiThreading
 				@um_buffer.instance_variable_defined?(:@pode_ler).should be_true
 			end
 			
-			it 'deveria ter o atributo ocupado' do
-				@um_buffer.instance_variable_defined?(:@ocupado).should be_true
+			it 'deveria ter o atributo buffers_ocupados' do
+				@um_buffer.instance_variable_defined?(:@buffers_ocupados).should be_true
 			end
 			
+			it 'deveria ter o atributo gravar_indice' do
+				@um_buffer.instance_variable_defined?(:@gravar_indice).should be_true
+			end
+			
+			it 'deveria ter o atributo ler_indice' do
+				@um_buffer.instance_variable_defined?(:@ler_indice).should be_true
+			end
 			context 'apos usar o metodo set passando 1 como parametro' do
 				before :all do
 					@um_buffer.set 1
 				end
 				
-				it 'deveria ter o buffer igual a 1' do
+				it 'deveria ter 1 buffer ocupado' do
+					atr_buffers_ocupados = @um_buffer.instance_variable_get :@buffers_ocupados
+					atr_buffers_ocupados.should be_eql 1
+				end
+				
+				it 'deveria ter o primeiro buffer igual a 1' do
 					atr_buffer = @um_buffer.instance_variable_get :@buffer
-					atr_buffer.should be_eql 1
+					atr_buffer.first.should be_eql 1
 				end
 				
 				it 'deveria ter o metodo get retornando 1' do
 					@um_buffer.get.should be_eql 1
 				end
+				
 			end
 		end
 	end
