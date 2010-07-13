@@ -8,7 +8,7 @@ module MultiThreading
 		
 		def run
 			soma = 0
-			9.times do
+			10.times do
 				begin
 					JThread.sleep rand(3000)
 					soma += @localizacao_compartilhada.get

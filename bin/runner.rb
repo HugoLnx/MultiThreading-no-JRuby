@@ -2,7 +2,6 @@ aqui = File.dirname __FILE__
 require File.join(aqui,'classes/multithreading')
 
 teste = Executors.new_fixed_thread_pool 2
-
 localizacao_compartilhada = MultiThreading::BufferExemplo.new
 
 begin

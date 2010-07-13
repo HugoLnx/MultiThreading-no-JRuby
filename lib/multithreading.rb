@@ -7,6 +7,7 @@ java_import java.lang.Runnable
 java_import java.lang.InterruptedException
 java_import java.util.concurrent.ExecutorService
 java_import java.util.concurrent.Executors
+java_import java.util.concurrent.locks.ReentrantLock
 JThread = java.lang.Thread # A constante Thread ja existe
 
 # Dando require de todas as classes do diretorio bin/

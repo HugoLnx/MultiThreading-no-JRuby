@@ -19,6 +19,22 @@ module MultiThreading
 				@um_buffer.instance_variable_defined?(:@buffer).should be_true
 			end
 			
+			it 'deveria ter o atributo lock_de_acesso' do
+				@um_buffer.instance_variable_defined?(:@lock_de_acesso).should be_true
+			end
+			
+			it 'deveria ter o atributo pode_gravar' do
+				@um_buffer.instance_variable_defined?(:@pode_gravar).should be_true
+			end
+			
+			it 'deveria ter o atributo pode_ler' do
+				@um_buffer.instance_variable_defined?(:@pode_ler).should be_true
+			end
+			
+			it 'deveria ter o atributo ocupado' do
+				@um_buffer.instance_variable_defined?(:@ocupado).should be_true
+			end
+			
 			context 'apos usar o metodo set passando 1 como parametro' do
 				before :all do
 					@um_buffer.set 1
